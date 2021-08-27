@@ -3,6 +3,24 @@ namespace UkrainianN.ApiGateway.Controllers.V1
 {
     public class GroupsController : ApiBaseController
     {
+        [HttpPost]
+        public IActionResult CreateGroup()
+        {
+            return Ok();
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateGroup(int id)
+        {
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteGroup(int id)
+        {
+            return Ok();
+        }
+
         [HttpGet("{id}")]
         public IActionResult GetGroupById(int id)
         {
@@ -33,20 +51,20 @@ namespace UkrainianN.ApiGateway.Controllers.V1
             return Ok();
         }
 
-        [HttpGet("{id}/feed")]
+        [HttpGet("{id}/posts")]
         public IActionResult GetGroupFeed(int id, int page)
         {
             return Ok();
         }
 
-        [HttpGet("{id}/feed/{feedId}")]
-        public IActionResult GetGroupFeedById(int id, long feedId)
+        [HttpGet("{id}/posts/{postId}")]
+        public IActionResult GetGroupFeedById(int id, long postId)
         {
             return Ok();
         }
 
-        [HttpGet("{id}/feed/{feedId}/comments")]
-        public IActionResult GetGroupFeedComments(int id, long feedId, int page)
+        [HttpGet("{id}/posts/{postId}/comments")]
+        public IActionResult GetGroupFeedComments(int id, long postId, int page)
         {
             return Ok();
         }

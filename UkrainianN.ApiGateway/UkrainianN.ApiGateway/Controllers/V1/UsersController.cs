@@ -9,20 +9,20 @@ namespace UkrainianN.ApiGateway.Controllers.V1
             return Ok();
         }
 
-        [HttpGet("{id}/feed")]
+        [HttpGet("{id}/posts")]
         public IActionResult GetUserFeed(int id, int page)
         {
             return Ok();
         }
 
-        [HttpGet("{id}/feed/{feedId}")]
-        public IActionResult GetUserFeed(int id, long feedId)
+        [HttpGet("{id}/posts/{postId}")]
+        public IActionResult GetUserFeed(int id, long postId)
         {
             return Ok();
         }
 
-        [HttpPost("feed")]
-        public IActionResult CreateFeed()
+        [HttpPost("posts")]
+        public IActionResult CreateFeed(int id)
         {
             return Ok();
         }
