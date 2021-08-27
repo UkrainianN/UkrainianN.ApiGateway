@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,6 +20,12 @@ namespace UkrainianN.ApiGateway
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddApiVersioning(option =>
+            {
+                option.DefaultApiVersion = new ApiVersion(1, 0);
+                option.AssumeDefaultVersionWhenUnspecified = true;
+            });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -34,6 +41,8 @@ namespace UkrainianN.ApiGateway
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "UkrainianN.ApiGateway v1"));
             }
+
+            app.UseApiVersioning();
 
             app.UseHttpsRedirection();
 
