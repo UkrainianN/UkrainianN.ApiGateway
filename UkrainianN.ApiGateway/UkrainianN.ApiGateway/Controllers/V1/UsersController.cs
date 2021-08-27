@@ -15,6 +15,12 @@ namespace UkrainianN.ApiGateway.Controllers.V1
             return Ok();
         }
 
+        [HttpGet("{id}/feed/{feedId}")]
+        public IActionResult GetUserFeed(int id, long feedId)
+        {
+            return Ok();
+        }
+
         [HttpPost("feed")]
         public IActionResult CreateFeed()
         {
