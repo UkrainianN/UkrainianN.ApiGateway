@@ -3,6 +3,8 @@ namespace UkrainianN.ApiGateway.Controllers.V1
 {
     public class GroupsController : ApiBaseController
     {
+        #region Groups
+
         [HttpPost] // api/v1/groups
         public IActionResult CreateGroup()
         {
@@ -26,6 +28,10 @@ namespace UkrainianN.ApiGateway.Controllers.V1
         {
             return Ok();
         }
+
+        #endregion
+
+        #region Members
 
         [HttpPost("{id}/join")] // api/v1/groups/1/join
         public IActionResult JoinToGroup(int id)
@@ -51,6 +57,10 @@ namespace UkrainianN.ApiGateway.Controllers.V1
             return Ok();
         }
 
+        #endregion
+
+        #region Posts
+
         [HttpGet("{id}/posts")] // api/v1/groups/1/posts?page=1
         public IActionResult GetGroupFeed(int id, int page)
         {
@@ -68,5 +78,35 @@ namespace UkrainianN.ApiGateway.Controllers.V1
         {
             return Ok();
         }
+
+        #endregion
+
+        #region Discussions
+
+        [HttpPost("{id}/discussions")]
+        public IActionResult CreateDiscussion()
+        {
+            return Ok();
+        }
+
+        [HttpGet("{id}/discussions")]
+        public IActionResult GetDiscussions()
+        {
+            return Ok();
+        }
+
+        [HttpGet("{id}/discussions/{discussionId}")]
+        public IActionResult GetDiscussionById(long discussionId)
+        {
+            return Ok();
+        }
+
+        [HttpDelete("{id}/discussions/{discussionId}")]
+        public IActionResult DeleteDiscussionById(long discussionId)
+        {
+            return Ok();
+        }
+
+        #endregion
     }
 }
