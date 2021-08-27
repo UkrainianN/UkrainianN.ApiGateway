@@ -8,5 +8,17 @@ namespace UkrainianN.ApiGateway.Controllers.V1
         {
             return Ok();
         }
+
+        [HttpGet("{id}/feed")]
+        public IActionResult GetUserFeed(int id, int page)
+        {
+            return Ok();
+        }
+
+        [HttpPost("feed")]
+        public IActionResult CreateFeed()
+        {
+            return Ok();
+        }
     }
 }
