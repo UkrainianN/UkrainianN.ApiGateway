@@ -51,6 +51,24 @@ namespace UkrainianN.ApiGateway.Controllers.V1
             return Ok();
         }
 
+        [HttpGet("{id}/members/new")] // api/v1/groups/1/members/new?page=1
+        public IActionResult GetRequestsForJoinToGroup(int id, int page = 1)
+        {
+            return Ok();
+        }
+
+        [HttpPost("{id}/members/new/{memberId}")] // api/v1/groups/1/members/new/1
+        public IActionResult AcceptRequestsForJoinToGroup(int id, int memberId)
+        {
+            return Ok();
+        }
+
+        [HttpPut("{id}/members")]
+        public IActionResult UpdateMemebrs()
+        {
+            return Ok();
+        }
+
         [HttpDelete("{id}/members/{memberId}/kick")] // api/v1/groups/1/members/1/kick
         public IActionResult KickMemberFromGroup(int id, int memberId)
         {
@@ -83,25 +101,25 @@ namespace UkrainianN.ApiGateway.Controllers.V1
 
         #region Discussions
 
-        [HttpPost("{id}/discussions")]
+        [HttpPost("{id}/discussions")] // api/v1/groups/1/discussions
         public IActionResult CreateDiscussion()
         {
             return Ok();
         }
 
-        [HttpGet("{id}/discussions")]
+        [HttpGet("{id}/discussions")] // api/v1/groups/1/discussions
         public IActionResult GetDiscussions()
         {
             return Ok();
         }
 
-        [HttpGet("{id}/discussions/{discussionId}")]
+        [HttpGet("{id}/discussions/{discussionId}")] // api/v1/groups/1/discussions/1
         public IActionResult GetDiscussionById(long discussionId)
         {
             return Ok();
         }
 
-        [HttpDelete("{id}/discussions/{discussionId}")]
+        [HttpDelete("{id}/discussions/{discussionId}")] // api/v1/groups/1/discussions/1
         public IActionResult DeleteDiscussionById(long discussionId)
         {
             return Ok();
